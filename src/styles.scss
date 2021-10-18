@@ -1,0 +1,95 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+
+$custom-typography: mat-typography-config($font-family: '"yekan", sans-serif;');
+@include mat-core($custom-typography);
+
+html, body{
+    margin: 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: yekan, "Helvetica Neue", sans-serif; }
+input, select, textarea, button{font-family:inherit;}
+@font-face {
+
+    font-family: "yekan";
+    
+    src: url(assets/font/Yekan.eot);
+    
+    src: url(assets/font/Yekan.eot?#iefix) format("embedded-opentype"), url(assets/font/Yekan.woff) format("woff"), url(assets/font/Yekan.ttf) format("truetype"), url(assets/font/Yekan.svg#BYekan) format("svg");
+    
+    font-weight: normal;
+    
+    font-style: normal
+}
+
+.button{
+    width: 100%;
+    background-color: #36b2d1;
+    color: white;
+}
+
+
+.container{
+    border: #dedada solid thin; 
+    border-radius: 2px;
+    padding: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        border: none; 
+        border-radius: 2px;
+        padding: 100px;
+    }
+}
+
+.mat-tab-body-wrapper{margin-top: 20px;}
+
+.mat-card {
+    padding: 18px !important; 
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0.5px !important;
+}
+.mat-card:hover{
+    cursor: pointer;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+}
+
+.mat-card-image {
+    width: calc(100% + 36px) !important; 
+    margin: 0 -18px 16px -18px !important; 
+}
+
+.mat-tab-label {
+    font-size: 16px !important;
+}
+
+.mat-card-title {
+    font-size:24px !important;
+    font-weight: 500 !important;
+}
+
+.mat-card-content {
+    font-size: 14px !important;
+    
+}
+
+.product {
+    margin-bottom: 0px;
+    /*min-width: 180px;
+    text-align: center;*/
+} 
+
+/* desktop button */
+.mat-card-add-button {
+    border: 1px dashed grey;
+    box-shadow:none !important;
+    cursor:pointer;
+}
+
+.product img {
+    height: 250px;
+    object-fit: contain;
+}

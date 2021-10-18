@@ -1,0 +1,43 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="height: 80vh;direction: ltr;">
+    <div fxLayout="column" fxLayoutAlign="start center" class="container">
+        <div >
+            <mat-icon style="font-size: 50px; margin-right: 25px;">fingerprint</mat-icon>
+        </div>
+        
+        <div fxLayout="row" fxLayoutAlign="start center" style="color: red;">
+            <!-- {{errorMessage}} -->
+        </div>
+        <br/>
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <div>
+                <mat-form-field style="text-align: left;direction: ltr;">
+                    <mat-label>نام کاربری (E-Mail)</mat-label>
+                    <input type="text"  matInput placeholder="مثال sample@gmail.com"  formControlName="Username" autocomplete="off" autofocus email>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field style="text-align: left;direction: ltr;">
+                    <input type="password" matInput placeholder="کلمه عبور" formControlName="Password">
+                </mat-form-field>
+            </div>
+
+            <br/>
+            <div>
+                <button class="button" type="submit" mat-button>ورود</button>
+            </div>
+
+        </form>
+
+        <div style="width: 100%;margin-top: 2px;">
+            <a routerLink="/register" >
+                <button class="button" style="background-color: #ef394e;" mat-button>ثبت نام</button>
+            </a>
+        </div>
+        <a routerLink="/forget" style="text-decoration: none;">
+            رمز عبور را فراموش کردید؟
+        </a>
+        
+
+    </div>
+</div>

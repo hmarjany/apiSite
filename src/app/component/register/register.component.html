@@ -1,0 +1,49 @@
+<div  fxLayout="column" fxLayoutAlign="center center" style="height: 80vh;direction: ltr;">
+    <div fxLayout="column" fxLayoutAlign="start center" class="container">
+        <div >
+            <mat-icon style="font-size: 50px;margin-right: 25px;">account_circle</mat-icon>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" style="color: red;">
+            <!-- {{errorMessage}} -->
+        </div>
+        <br/>
+        <form [formGroup]="form" (ngSubmit)="register()">
+            <div style="direction: rtl;">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="نام و نام خانوادگی" formControlName="name"required autocomplete="off" autofocus>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field style="text-align: left;direction: ltr;">
+                    <mat-label>نام کاربری (E-Mail)</mat-label>
+                    <input type="text" matInput placeholder="مثال sample@gmail.com" formControlName="email"required autocomplete="off" email>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field style="text-align: left;direction: ltr;">
+                    <mat-label>تلفن همراه</mat-label>
+                    <input type="text" matInput placeholder="مثال 09120000000" formControlName="phone" autocomplete="off">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field style="text-align: left;direction: ltr;">
+                    <input type="password" matInput placeholder="کلمه عبور" formControlName="password" required minlength="6"
+                    [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="form.hasError('passLength')">
+                        حداقل تعدا کارکترهای کلمه عبور باید 6 عدد باشد
+                    </mat-error> 
+                </mat-form-field>
+            </div>
+
+            <br/>
+            <div>
+                <button class="button" type="submit" mat-button>ثبت نام</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

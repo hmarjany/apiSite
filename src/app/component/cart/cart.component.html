@@ -1,0 +1,40 @@
+<mat-list>
+    <div *ngFor="let cart of carts;">
+        <mat-list-item fxLayout="column" fxLayoutAlign="start strart">
+            <div style="width: 50%;" fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon style="color: red;cursor: pointer;" (click)="removeCart(cart)">remove_shopping_cart</mat-icon>
+                <span>
+                    {{cart.description}}
+                </span>
+
+            </div>
+            &nbsp;
+            <div style="width: 50%;" fxLayout="row" fxLayoutAlign="end center">
+                <span>{{cart.price|number}}</span>
+                <span>&nbsp;</span>
+                <span>تومان</span>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </div>
+</mat-list>
+<div *ngIf="totalPayment>0" fxLayout="column" fxLayoutAlign="start center" style="padding: 10px;font-size: 28px;">
+
+    <div>
+        مجموع قابل پرداخت :
+        <span style="color: orangered;">
+            {{totalPayment|number}}
+        </span>
+    </div>
+    <button style="margin: 20px;" mat-raised-button color="accent">
+        <span>
+            پرداخت
+        </span>
+    </button>
+</div>
+<div *ngIf="totalPayment<=0" fxLayout="column" fxLayoutAlign="center center" style="padding: 10px;font-size: 28px;">
+
+    <div>
+        <mat-icon style="color: orangered; font-size: 128px;">remove_shopping_cart</mat-icon>
+    </div>
+</div>

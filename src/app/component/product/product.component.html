@@ -1,0 +1,26 @@
+<div *ngIf="products.length > 0" style="background-color:whitesmoke;padding: 10px;">
+    <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="0px">
+        <mat-card fxLayout="column" fxFlex.md="0 1 calc(25% - 20px)" fxFlex="0 1 calc(20% - 20px)"
+            fxFlex.sm="0 1 calc(33% - 20px)" fxFlex.xs="100" *ngFor="let product of products; let i = index"
+            class="product">
+            <img mat-card-image src="{{product.picture}}" alt="photo">
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-content fxFlex>
+                <p>
+                    {{product.description}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions fxFlexAlign="end" align="end">
+                
+                <div>
+                    <span>{{product.price|number}}</span>
+                    <span>&nbsp;</span>
+                    <span>تومان</span>
+                </div>
+                <button style="color: green;" (click) = "addTocart(product)" mat-icon-button>
+                    <mat-icon>add_shopping_cart</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
